@@ -1,11 +1,13 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for, send_from_directory
 from pathlib import Path
 from content import BIRDS, PLANTS, ANIMALS, HISTORY_EN, HISTORY_OR
 
 BASE_DIR = Path(__file__).resolve().parent
-app = Flask(__name__, static_folder="images", static_url_path="/images")
+app = Flask(__name__, static_folder="static", static_url_path="/static")
 app.secret_key = "chilimo-forest-web-app-change-this-if-needed"
-
+@app.route("/images/<path:filename>")
+def images(filename):
+    return send_from_directory("images", filename)
 TRANSLATIONS = {
     "title": {"en": "🌳 CHILIMO FOREST", "or": "🌳 BOSONA CHILIMOO"},
     "visitor_system": {"en": "Chilimo Forest Visitor Information System", "or": "Sirna Odeeffannoo Daawwattoota Bosona Chilimoo"},

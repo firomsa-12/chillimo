@@ -1,10 +1,10 @@
 {% extends "base.html" %}{% block content %}
 <h2 class="page-title">{{ page_titles['attractions'][lang] }}</h2>
 <div class="slideshow">
-  {% if image_names %}<img id="attraction-image" src="{{ url_for('static', filename=image_names[0]) }}" alt="Chilimo Forest attraction">
+  {% if image_names %}<img id="attraction-image" src="/images/{{ image_names[0] }}" alt="Chilimo Forest attraction">
   <p class="caption">🌳 {% if lang == 'en' %}Chilimo Forest{% else %}Bosona Chilimoo{% endif %}</p>
   {% else %}<p>No images found.</p>{% endif %}
 </div>
 <div class="content-card" style="margin-top:20px"><p>{% if lang == 'en' %}Chilimo Forest is an important Afro-montane forest area with beautiful landscapes, wildlife, birds and native plants. Visitors can enjoy the natural environment and learn about forest biodiversity and conservation.{% else %}Bosonni Chilimoo bosona Afro-montane barbaachisaa ta'ee, lafa bareedaa, bineensota bosaa, simbirrootaa fi biqiltoota biyya keessaa qaba. Daawwattoonni naannoo uumamaa daawwachuu fi garaagarummaa lubbu-qabeeyyii fi eegumsa bosonaa barachuu danda'u.{% endif %}</p></div>
-{% if image_names %}<script>const imgs={{ image_names|tojson }}; let i=0; setInterval(()=>{i=(i+1)%imgs.length;document.getElementById('attraction-image').src={{ url_for('static', filename='')|tojson }}+imgs[i];},3000);</script>{% endif %}
+{% if image_names %}<script>const imgs={{ image_names|tojson }}; let i=0; setInterval(()=>{i=(i+1)%imgs.length;document.getElementById('attraction-image').src="/images/"+imgs[i];},3000);</script>{% endif %}
 {% endblock %}

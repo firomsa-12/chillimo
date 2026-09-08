@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block content %}
+<h2 class="page-title">{{ page_titles[page][lang] }}</h2>
+<p class="subtitle">{{ subtitles[page][lang] }}</p>
+<div class="species-grid">
+{% for item in species %}
+  <article class="species-card">
+    <img src="{{ url_for('static', filename=item.image.replace('images/','')) }}" alt="{{ item.name_en }}" loading="lazy">
+    <div class="body">
+      <h3>{{ icon }} {{ item.name_en if lang == 'en' else item.name_or }}</h3>
+      <p>{{ item.description_en if lang == 'en' else item.description_or }}</p>
+      {% if lang == 'or' %}<p class="oromo"><strong>English:</strong> {{ item.name_en }} — {{ item.description_en }}</p>{% endif %}
+    </div>
+  </article>
+{% endfor %}
+</div>
+{% endblock %}

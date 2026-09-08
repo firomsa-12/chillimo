@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ 'om' if lang == 'or' else 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_titles.get(page, {'en': t('title'), 'or': t('title')})[lang] }} | Chilimo Forest</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <h1>{{ t('title') }}</h1>
+  <p>{{ t('visitor_system') }}</p>
+</header>
+<nav class="navbar">
+  {% for key, endpoint in [('home','home'),('history','history'),('animals','animals'),('birds','birds'),('plants','plants'),('attractions','attractions'),('location','location'),('about','about')] %}
+    <a class="{{ 'active' if page == key else '' }}" href="{{ url_for(endpoint) }}">{{ t(key) }}</a>
+  {% endfor %}
+  <span class="nav-spacer"></span>
+  <span class="language">{{ t('language') }}:
+    <a class="{{ 'active' if lang == 'en' else '' }}" href="{{ url_for('set_language', lang='en') }}">English</a>
+    <a class="{{ 'active' if lang == 'or' else '' }}" href="{{ url_for('set_language', lang='or') }}">Afaan Oromoo</a>
+  </span>
+</nav>
+<main>{% block content %}{% endblock %}</main>
+<footer class="footer">{{ t('visitor_system') }}</footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<h2 class="page-title">{{ page_titles['about'][lang] }}</h2>
+<div class="content-card">
+<h2 style="color:#2e7d32;text-align:center">{{ t('visitor_system') }}</h2>
+{% if lang == 'en' %}
+<p>This application provides useful information about Chilimo Forest and its natural resources.</p><p>Visitors can learn about the history of the forest, wild animals, birds, plants, attractions, and location.</p><p>The system is designed to help visitors understand and explore the natural beauty and importance of Chilimo Forest.</p>
+<h2>System Features</h2><ul class="about-list"><li>Forest History</li><li>Wild Animals Information</li><li>Birds Information</li><li>Plants Information</li><li>Tourist Attractions</li><li>Forest Location</li><li>English and Afaan Oromoo Language Support</li></ul>
+<h2>Developed By</h2><p><strong>Abdi Gebisa<br>Firomsa Girma<br>Getu Angecha<br>Jara Ayele<br>Wakjira Girma</strong></p>
+{% else %}
+<p>Appilikeeshiniin kun waa'ee Bosona Chilimoo fi qabeenya uumamaa isaa odeeffannoo barbaachisaa kenna.</p><p>Daawwattoonni seenaa bosonaa, bineensota bosonaa, simbirroota, biqiltoota, bakka hawwataa fi iddoo bosonichaa ilaalchisee barachuu danda'u.</p><p>Sirni kun daawwattoonni bareedinaa fi faayidaa uumamaa Bosona Chilimoo akka hubatanii fi daawwatan gargaaruuf qophaa'e.</p>
+<h2>Wantoota Sirnichaa</h2><ul class="about-list"><li>Seenaa Bosonaa</li><li>Odeeffannoo Bineensota Bosonaa</li><li>Odeeffannoo Simbirrootaa</li><li>Odeeffannoo Biqiltootaa</li><li>Bakka Hawwataa Turistootaa</li><li>Iddoo Bosonichaa</li><li>Deeggarsa Afaan Ingilizii fi Afaan Oromoo</li></ul>
+<h2>Kan Qopheesse</h2><p><strong>Abdi Gebisa<br>Firomsa Girma<br>Getu Angecha<br>Jara Ayele<br>Wakjira Girma</strong></p>
+{% endif %}
+</div>{% endblock %}

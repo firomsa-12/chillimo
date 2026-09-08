@@ -1,0 +1,38 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #e8f5e9; color: #333; }
+a { color: inherit; }
+.site-header { background: #1b5e20; color: white; text-align: center; padding: 18px 16px 14px; }
+.site-header h1 { margin: 0 0 5px; font-size: clamp(1.6rem, 4vw, 2.3rem); }
+.site-header p { margin: 0; color: #c8e6c9; }
+.navbar { background: #2e7d32; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 6px 10px; }
+.navbar a, .language { text-decoration: none; color: white; font-weight: 700; padding: 10px 12px; border-radius: 5px; }
+.navbar a:hover, .navbar a.active { background: #1b5e20; }
+.nav-spacer { flex: 1; }
+.language { display: flex; gap: 7px; align-items: center; font-size: .9rem; }
+.language a { padding: 6px 9px; background: white; color: #1b5e20; }
+.language a.active { background: #c8e6c9; }
+main { max-width: 1200px; margin: 0 auto; padding: 28px 18px 50px; }
+.page-title { text-align: center; color: #1b5e20; margin: 0 0 8px; font-size: clamp(1.7rem, 4vw, 2.2rem); }
+.subtitle { text-align: center; color: #555; margin: 0 0 24px; }
+.hero { text-align: center; }
+.hero img { width: min(600px, 100%); height: 280px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.16); }
+.intro { max-width: 850px; margin: 22px auto; white-space: pre-line; text-align: center; line-height: 1.7; font-size: 1.05rem; }
+.info-box, .content-card { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.info-box { margin: 20px auto; max-width: 900px; text-align: center; }
+.info-box h2 { color: #1b5e20; margin-top: 0; }
+.species-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.species-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.09); }
+.species-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.species-card .body { padding: 16px; }
+.species-card h3 { color: #1b5e20; margin: 0 0 6px; }
+.species-card p { line-height: 1.55; margin: 7px 0; }
+.species-card .oromo { color: #555; }
+.history { white-space: pre-wrap; line-height: 1.65; font-size: 1rem; }
+.slideshow { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,.09); text-align: center; }
+.slideshow img { width: 100%; max-width: 850px; height: 400px; object-fit: cover; border-radius: 8px; }
+.slideshow .caption { margin: 12px 0 0; color: #1b5e20; font-weight: 700; }
+.location-map { width: min(650px, 100%); height: auto; border-radius: 8px; display: block; margin: 20px auto 0; }
+.about-list { line-height: 1.8; }
+.footer { text-align: center; color: #666; padding: 22px 15px; font-size: .9rem; }
+@media (max-width: 760px) { .navbar { justify-content: center; } .nav-spacer { display: none; } .language { width: 100%; justify-content: center; } .slideshow img { height: 240px; } }

@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero">
+  <h2 class="page-title">{{ page_titles['home'][lang] }}</h2>
+  <img src="{{ url_for('static', filename='chilimo_forest.jpg') }}" alt="Chilimo Forest">
+  <p class="intro">{% if lang == 'en' %}Welcome to the Chilimo Forest Visitor Information System.\n\nChilimo Forest is an important natural forest in Ethiopia. The forest provides habitat for many plants, birds and wild animals.\n\nThis application helps visitors discover the history, wildlife and plants of Chilimo Forest.{% else %}Baga gara Sirna Odeeffannoo Daawwattoota Bosona Chilimoo nagaan dhuftan.\n\nBosonni Chilimoo bosona uumamaa barbaachisaa Itoophiyaa keessatti argamuudha. Bosonni kun biqiltoota, simbirrootaa fi bineensota bosonaa hedduudhaaf bakka jireenyaa ni kenna.\n\nAppilikeeshiniin kun daawwattoonni seenaa, bineensota bosonaa fi biqiltoota Bosona Chilimoo akka baratan gargaara.{% endif %}</p>
+  <div class="info-box"><h2>{% if lang == 'en' %}📍 Location{% else %}📍 Bakka Argamaa{% endif %}</h2>
+    <p>{% if lang == 'en' %}Chilimo Forest is located in Dendi District, West Shewa Zone, Oromia Regional State, Ethiopia.{% else %}Bosonni Chilimoo Godina Dandii, Godina Lixa Shawa, Naannoo Oromiyaa, Itoophiyaa keessatti argama.{% endif %}</p>
+    <p><a href="{{ url_for('location') }}">{% if lang == 'en' %}View the forest location and map{% else %}Bakka bosonichaa fi kaartaa ilaali{% endif %}</a></p>
+  </div>
+</section>
+{% endblock %}

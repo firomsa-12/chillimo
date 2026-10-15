@@ -9,7 +9,7 @@ app.secret_key = "chilimo-forest-web-app-change-this-if-needed"
 def images(filename):
     return send_from_directory("images", filename)
 TRANSLATIONS = {
-    "title": {"en": "🌳 CHILIMO FOREST", "or": "🌳 BOSONA CHILIMOO"},
+    "title": {"en": " CHILIMO FOREST", "or": " BOSONA CHILIMOO"},
     "visitor_system": {"en": "Chilimo Forest Visitor Information System", "or": "Sirna Odeeffannoo Daawwattoota Bosona Chilimoo"},
     "home": {"en": "Home", "or": "Mana"},
     "history": {"en": "History", "or": "Seenaa"},
